@@ -6,15 +6,14 @@ using TMPro;
 
 public class TestScript : MonoBehaviour
 {
-    public Text FirstText;
+    public Text NameLab;
 
-    public TMP_Text text1;
-    public GameObject a;
+    public TMP_Text ContentLab;
     // Start is called before the first frame update
     void Start()
     {
-        FirstText.text = "Welocome Home!";
-        text1.text = "what>";
+        NameLab.text = "Hades";
+        ContentLab.text = "Welcome Home!";
     }
 
     // Update is called once per frame
