@@ -1,0 +1,8 @@
+fileFormatVersion: 2
+guid: 7c0205d4d75cb1c48b3ee10907b7ddf5
+DefaultImporter:
+  externalObjects: {}
+  userData: '{"name":"char_anim_run","targetTexture":{"instanceID":11188},"targetAtlas":{"instanceID":10926},"targetAnimator":{"instanceID":11302},"targetPrefab":{"instanceID":-2812},"useTags":true,"loopAnim":false,"useConfig":false,"border":5,"useChild":false,"alignment":0,"pivot":{"x":0.5,"y":0.5},"animType":0,"autoImport":false,"importSpritesheet":true,"importAnimations":true,"createAnimator":true,"clips":[],"lastExportString":"7/14/2018
+    1:49:57 AM","assetID":"337e87493d9a78747b7b60ffed5ac72b"}'
+  assetBundleName: 
+  assetBundleVariant: 
