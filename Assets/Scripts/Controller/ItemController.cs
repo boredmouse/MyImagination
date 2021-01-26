@@ -12,7 +12,7 @@ public class ItemController : MonoBehaviour
     private float startDistance = 10;
     private float endDistance = 4;
     private float backDistance = -1;
-    private SpriteRenderer renderer;
+    private SpriteRenderer spRenderer;
     private Color rightColor = Color.white;
 
     private bool dangerous = true;
@@ -20,7 +20,7 @@ public class ItemController : MonoBehaviour
     void Start()
     {
         this.torch = GameObject.FindGameObjectWithTag("torchPos");
-        this.renderer = this.right.GetComponent<SpriteRenderer>();
+        this.spRenderer = this.right.GetComponent<SpriteRenderer>();
         this.left.SetActive(false);
         this.right.SetActive(true);
     }
@@ -31,17 +31,15 @@ public class ItemController : MonoBehaviour
         if (this.transform.position.x - this.torch.transform.position.x > startDistance)
         {
             rightColor.a = 1;
-            this.renderer.color = rightColor;
+            this.spRenderer.color = rightColor;
         }
         else if (this.transform.position.x - this.torch.transform.position.x > endDistance)
         {
             rightColor.a = (this.transform.position.x - this.torch.transform.position.x - endDistance) / (startDistance - endDistance);
-            this.renderer.color = rightColor;
+            this.spRenderer.color = rightColor;
         }
         else if (backDistance <= this.transform.position.x - this.torch.transform.position.x && this.transform.position.x - this.torch.transform.position.x <= endDistance)
         {
-            //rightColor.a = 0;
-            //this.renderer.color = rightColor;
             if (!dangerous)
             {
                 this.left.SetActive(false);
