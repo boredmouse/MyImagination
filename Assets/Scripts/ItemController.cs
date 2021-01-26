@@ -14,6 +14,8 @@ public class ItemController : MonoBehaviour
     private float backDistance = -1;
     private SpriteRenderer renderer;
     private Color rightColor = Color.white;
+
+    private bool dangerous = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,18 +40,18 @@ public class ItemController : MonoBehaviour
         }
         else if (backDistance <= this.transform.position.x - this.torch.transform.position.x && this.transform.position.x - this.torch.transform.position.x <= endDistance)
         {
-            rightColor.a = 0;
-            this.renderer.color = rightColor;
-            if (!right.activeSelf)
+            //rightColor.a = 0;
+            //this.renderer.color = rightColor;
+            if (!dangerous)
             {
                 this.left.SetActive(false);
-                this.right.SetActive(true);
             }
         }
         else if (this.transform.position.x - this.torch.transform.position.x < backDistance)
         {
-            if (right.activeSelf)
+            if (!left.activeSelf)
             {
+                this.dangerous = false;
                 this.left.SetActive(true);
                 this.right.SetActive(false);
             }
