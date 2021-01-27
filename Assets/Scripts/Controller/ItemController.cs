@@ -1,13 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using WHGame;
 
 public class ItemController : MonoBehaviour
 {
+    public enum ItemType {
+        normal = 0,
+        cloth = 1
+    };
+
+    public int ID = 0;
     public GameObject right;
     public GameObject left;
+    public ItemType itemType = ItemType.normal;
+
     //手电筒
-    public GameObject torch;
+    private GameObject torch;
 
     private float startDistance = 10;
     private float endDistance = 4;
@@ -47,9 +56,16 @@ public class ItemController : MonoBehaviour
         }
         else if (this.transform.position.x - this.torch.transform.position.x < backDistance)
         {
-            if (!left.activeSelf)
+            if(this.dangerous)
             {
                 this.dangerous = false;
+                if (this.itemType == ItemType.cloth)
+                {
+                    BattleManager.OnGetClothEvent(this.ID);
+                }
+            }
+            if (!left.activeSelf)
+            {
                 this.left.SetActive(true);
                 this.right.SetActive(false);
             }

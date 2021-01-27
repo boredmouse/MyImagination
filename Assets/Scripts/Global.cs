@@ -14,10 +14,10 @@ namespace WHGame
         [RuntimeInitializeOnLoadMethod]
         static void Init()
         {
-            if (IsTestScene)
+            /*if (IsTestScene)
             {
                 return;
-            }
+            }*/
             //全局控制类
             GameObject go = new GameObject("Global");
             DontDestroyOnLoad(go);

@@ -9,6 +9,9 @@ namespace WHGame
         private static BattleT curConfig = BattleConfig.Configs[0];
         private static SingleBattleController battleControl;
 
+        public delegate void OnGetCloth(int id);
+        public static OnGetCloth OnGetClothEvent;
+
         public static void Init()
         {
             MySceneManager.OnSceneLoadedEvent += BattleManager._OnSceneLoaded;

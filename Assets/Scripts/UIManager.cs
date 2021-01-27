@@ -19,7 +19,14 @@ namespace WHGame
         {
             Debug.Log("UIManager Init");
             MySceneManager.OnSceneLoadedEvent += this._OnSceneLoaded;
-            this.ShowUIWithStack(UIStartGame.Info);
+            if (Global.IsTestScene)
+            {
+                this.ShowUIWithStack(UIBattle.Info);
+            }
+            else
+            {
+                this.ShowUIWithStack(UIStartGame.Info);
+            }
         }
 
         public void ShowUIWithStack(UIInfo uiInfo)

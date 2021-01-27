@@ -8,6 +8,7 @@ namespace WHGame
     public class UIBattle : UIBase
     {
         public static UIInfo Info = new UIInfo("Prefabs/UI/UIBattle", "UIBattle");
+        public Text GetItemText;
         /*
         public delegate void OnPlayAnimDel(AnimID id, ClipMode mode, float fadeTime);
         public static OnPlayAnimDel OnPlayAnimEvent;
@@ -32,6 +33,16 @@ namespace WHGame
             OnPlayAnimEvent(AnimID.Walking,ClipMode.Loop,0.3f);
         }
         */
+        public override void OnShow()
+        {
+            base.OnShow();
+            BattleManager.OnGetClothEvent += this.OnGetCloth;
+        }
+
+        void OnGetCloth(int id)
+        {
+            this.GetItemText.text = id.ToString();
+        }
     }
 
 }
