@@ -39,9 +39,9 @@ namespace WHGame
             BattleManager.OnGetClothEvent += this.OnGetCloth;
         }
 
-        void OnGetCloth(int id)
+        void OnGetCloth(string id, CommonEnum.PartType part)
         {
-            this.GetItemText.text = id.ToString();
+            this.GetItemText.text = id;
         }
     }
 

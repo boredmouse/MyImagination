@@ -5,15 +5,19 @@ using WHGame;
 
 public class ItemController : MonoBehaviour
 {
-    public enum ItemType {
+    public enum ItemType
+    {
         normal = 0,
-        cloth = 1
+        cloth = 1,
+        pat =2
     };
+    
 
-    public int ID = 0;
+    public string ID = "00";
     public GameObject right;
     public GameObject left;
     public ItemType itemType = ItemType.normal;
+    public CommonEnum.PartType part = CommonEnum.PartType.body;
 
     //手电筒
     private GameObject torch;
@@ -56,12 +60,13 @@ public class ItemController : MonoBehaviour
         }
         else if (this.transform.position.x - this.torch.transform.position.x < backDistance)
         {
-            if(this.dangerous)
+            if (this.dangerous)
             {
                 this.dangerous = false;
                 if (this.itemType == ItemType.cloth)
                 {
-                    BattleManager.OnGetClothEvent(this.ID);
+                    //派发获取衣物事件
+                    BattleManager.OnGetClothEvent(this.ID,this.part);
                 }
             }
             if (!left.activeSelf)

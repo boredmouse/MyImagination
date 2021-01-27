@@ -8,31 +8,34 @@ namespace WHGame
     {
         public static readonly List<ModelResourceT> Configs = new List<ModelResourceT>{
         new ModelResourceT(
-           1,"UnityChan","Prefabs/GameObj/SD_unitychan_generic","Animations/UnityChan/"
+           "0000000000","naked/hero"
        ),
        new ModelResourceT(
-           2,"a","b","c"
+           "0000000100","neinei/pants"
        )
    };
-        public static ModelResourceT GetConfigByID(int id)
+        public static ModelResourceT GetConfigByID(string id)
         {
-            ModelResourceT config = ConfigManager.GetConfigByID<ModelResourceT>(Configs, id);
-            return config;
+            int cnt = Configs.Count;
+            for (int i = 0; i < cnt; i++)
+            {
+                if (Configs[i].ID == id)
+                {
+                    return Configs[i];
+                }
+            }
+            return null;
         }
     }
 
-    public class ModelResourceT : ConfigBase
+    public class ModelResourceT
     {
-        //public int ID;
-        public string Name;
+        public string ID;
         public string Path;
-        public string AnimPath;
-        public ModelResourceT(int id, string name, string path, string animPath)
+        public ModelResourceT(string id, string path)
         {
             ID = id;
-            Name = name;
             Path = path;
-            AnimPath = animPath;
         }
     }
 

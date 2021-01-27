@@ -9,7 +9,7 @@ namespace WHGame
         private static BattleT curConfig = BattleConfig.Configs[0];
         private static SingleBattleController battleControl;
 
-        public delegate void OnGetCloth(int id);
+        public delegate void OnGetCloth(string id, CommonEnum.PartType part);
         public static OnGetCloth OnGetClothEvent;
 
         public static void Init()
