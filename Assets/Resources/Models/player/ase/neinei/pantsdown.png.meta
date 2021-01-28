@@ -12,6 +12,8 @@ TextureImporter:
     21300014: down_1
     21300016: down_2
     21300018: down_3
+    21300020: downidle_0
+    21300022: downidle_1
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -97,7 +99,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 35f279ef5ad1c0c4e95d9bf34321de69
+      spriteID: cf2b12cb1fab5254683c8ccb9799b68e
       vertices: []
       indices: 
       edges: []
@@ -117,7 +119,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 34c39a1410bf5624f89de4aa1898f496
+      spriteID: 4bcd21887858b16449e99f06260acc03
       vertices: []
       indices: 
       edges: []
@@ -137,7 +139,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9c1524a070507e842898d53b71053eec
+      spriteID: 38b2c8f575b7e984bade589795ca19e2
       vertices: []
       indices: 
       edges: []
@@ -157,7 +159,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0b4205986b48db2478220411cb7f39e6
+      spriteID: 6f2f41d6ef2e89545aca103875458fa1
       vertices: []
       indices: 
       edges: []
@@ -177,7 +179,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c99437cbca73cb848b82b73620377f94
+      spriteID: 315e5547f38c58147ab0389744759bb5
       vertices: []
       indices: 
       edges: []
@@ -197,7 +199,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6a272ca914149af40a7d64e983491697
+      spriteID: 4ddb2946e20b07d4fbf6a06eceb41a70
       vertices: []
       indices: 
       edges: []
@@ -217,7 +219,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e496db0a6d044644097ee1e3e979351c
+      spriteID: c9e28ad61beefc0468f75ea764699e6f
       vertices: []
       indices: 
       edges: []
@@ -237,7 +239,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 369670a6c353211479fe58d29fbfc927
+      spriteID: 7f9259ac8701ed64785d5bfbc03a127b
       vertices: []
       indices: 
       edges: []
@@ -257,7 +259,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f095b6ad44ddf0542a3aa47d7eee7365
+      spriteID: 206f0a30c696a304f805c7fd4d4c2a2b
       vertices: []
       indices: 
       edges: []
@@ -277,7 +279,47 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b4c1897f72348474a949bf0fa6ed217b
+      spriteID: bd5360fe7b9699f41aaaa53dad710229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: downidle_0
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 548
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f4a18f86441b36498941495e252ca85
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: downidle_1
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 548
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c6206a6b6552c94cae09a3188a5ace8
       vertices: []
       indices: 
       edges: []
