@@ -122,7 +122,7 @@ public class PlayerController : MonoBehaviour
 
         if (state == PalyerState.Idle)
         {
-            //this.animationCom.Play("idle");
+            this.animationCom.Play("idle");
             if (this.modelAnimator != null)
             {
                 this.modelAnimator.Play("idle");
@@ -130,7 +130,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (state == PalyerState.Walk)
         {
-            //this.animationCom.Play("walk");
+            this.animationCom.Play("walk");
             if (this.modelAnimator != null)
             {
                 this.modelAnimator.Play("walk");
