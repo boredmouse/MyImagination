@@ -33,6 +33,8 @@ public class PlayerController : MonoBehaviour
         this.LoadHeroModel("naked/hero");
         cameraOffset = this.transform.position - Camera.main.transform.position;
         this.AddEventListener();
+
+        AchievementManager.GetAchievement("001");
     }
 
     void InitBodyParts()
@@ -79,7 +81,7 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(collision.gameObject.name);
+        //Debug.Log(collision.gameObject.name);
     }
 
     #region 状态与动画
@@ -116,7 +118,7 @@ public class PlayerController : MonoBehaviour
     void SetStateAndAnim(PalyerState state)
     {
         this.state = state;
-        Debug.Log("state:" + state);
+        //Debug.Log("state:" + state);
 
         if (state == PalyerState.Idle)
         {
@@ -176,7 +178,7 @@ public class PlayerController : MonoBehaviour
             Destroy(this.aseModel, 0);
         }
         string finalPath = "Models/player/ase/" + path;
-        Debug.Log("加载资源路径："+finalPath);
+        //Debug.Log("加载资源路径："+finalPath);
         var prefab = Resources.Load(finalPath, typeof(GameObject)) as GameObject;
         GameObject go = Object.Instantiate(prefab, this.modelParent) as GameObject;
         this.modelAnimator = go.GetComponent<Animator>();

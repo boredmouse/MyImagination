@@ -9,6 +9,9 @@ namespace WHGame
     {
         public static UIInfo Info = new UIInfo("Prefabs/UI/UIBattle", "UIBattle");
         public Text GetItemText;
+        public Text AchievementTipContent;
+
+        public Animation AchievementTipAnim;
         /*
         public delegate void OnPlayAnimDel(AnimID id, ClipMode mode, float fadeTime);
         public static OnPlayAnimDel OnPlayAnimEvent;
@@ -37,11 +40,19 @@ namespace WHGame
         {
             base.OnShow();
             BattleManager.OnGetClothEvent += this.OnGetCloth;
+            AchievementManager.OnGetAchievementEvent += this.OnGetAchievement;
         }
 
         void OnGetCloth(string id, CommonEnum.PartType part)
         {
             this.GetItemText.text = id;
+        }
+
+        void OnGetAchievement(string id)
+        {
+            var tableitem = AchievementConfig.GetConfigByID(id);
+            this.AchievementTipContent.text = tableitem.Desc;
+            this.AchievementTipAnim.Play("achievementIn");
         }
     }
 
