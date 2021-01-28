@@ -4,17 +4,17 @@ using UnityEngine;
 
 namespace WHGame
 {
-    public class AchievementConfig
+    public class ItemConfig
     {
-        public static readonly List<AchievementT> Configs = new List<AchievementT>{
-        new AchievementT(
-           "001","初次见面"
+        public static readonly List<ItemT> Configs = new List<ItemT>{
+        new ItemT(
+           "001","桃心内裤","Textures/Items/neinei"
        ),
-       new AchievementT(
-           "002","吐死"
+       new ItemT(
+           "002","吐死","a"
        )
         };
-        public static AchievementT GetConfigByID(string id)
+        public static ItemT GetConfigByID(string id)
         {
             int cnt = Configs.Count;
             for (int i = 0; i < cnt; i++)
@@ -28,14 +28,16 @@ namespace WHGame
         }
     }
 
-    public class AchievementT
+    public class ItemT
     {
         public string ID;
-        public string Desc;
-        public AchievementT(string id, string desc)
+        public string Name;
+        public string Icon;
+        public ItemT(string id, string name, string icon)
         {
             ID = id;
-            Desc = desc;
+            Name = name;
+            Icon = icon;
         }
     }
 

@@ -8,10 +8,10 @@ namespace WHGame
     {
         public static readonly List<ModelResourceT> Configs = new List<ModelResourceT>{
         new ModelResourceT(
-           "0000000000","naked/hero"
+           "000000000000000","naked/hero"
        ),
        new ModelResourceT(
-           "0000000100","neinei/pants"
+           "000000000001000","neinei/pants"
        )
    };
         public static ModelResourceT GetConfigByID(string id)

@@ -8,34 +8,14 @@ namespace WHGame
     public class UIBattle : UIBase
     {
         public static UIInfo Info = new UIInfo("Prefabs/UI/UIBattle", "UIBattle");
-        public Text GetItemText;
+        public Text GetItemName;
+        public Image ItemIcon;
         public Text AchievementTipContent;
 
+
         public Animation AchievementTipAnim;
-        /*
-        public delegate void OnPlayAnimDel(AnimID id, ClipMode mode, float fadeTime);
-        public static OnPlayAnimDel OnPlayAnimEvent;
-        [SerializeField]
-        private Button closeButton;
-        public Button WalkBtn;
-        // Start is called before the first frame update
-        void Start()
-        {
-            closeButton.onClick.AddListener(OnClickClose);
-            WalkBtn.onClick.AddListener(OnClickWalk);
-        }
-
-
-
-        public void OnClickClose()
-        {
-            MySceneManager.EnterScene(SceneName.Start);
-        }
-        public void OnClickWalk()
-        {
-            OnPlayAnimEvent(AnimID.Walking,ClipMode.Loop,0.3f);
-        }
-        */
+        public Animation GetItemTipAnim;
+        
         public override void OnShow()
         {
             base.OnShow();
@@ -45,7 +25,11 @@ namespace WHGame
 
         void OnGetCloth(string id, CommonEnum.PartType part)
         {
-            this.GetItemText.text = id;
+            var tableitem = ItemConfig.GetConfigByID(id);
+            this.GetItemName.text = tableitem.Name;
+            Sprite icon = Resources.Load<Sprite>(tableitem.Icon);
+            ItemIcon.sprite = icon;
+            GetItemTipAnim.Play("getItemTipIn");
         }
 
         void OnGetAchievement(string id)
@@ -54,6 +38,26 @@ namespace WHGame
             this.AchievementTipContent.text = tableitem.Desc;
             this.AchievementTipAnim.Play("achievementIn");
         }
+
+        /*
+        [SerializeField]
+        private Button closeButton;
+        public Button WalkBtn;
+        // Start is called before the first frame update
+        void Start()
+        {
+            closeButton.onClick.AddListener(OnClickClose);
+            WalkBtn.onClick.AddListener(OnClickWalk);
+        }
+        public void OnClickClose()
+        {
+            MySceneManager.EnterScene(SceneName.Start);
+        }
+        public void OnClickWalk()
+        {
+            OnPlayAnimEvent(AnimID.Walking,ClipMode.Loop,0.3f);
+        }
+        */
     }
 
 }

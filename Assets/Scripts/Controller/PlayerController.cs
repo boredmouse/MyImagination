@@ -39,11 +39,11 @@ public class PlayerController : MonoBehaviour
 
     void InitBodyParts()
     {
-        this.bodyParts[CommonEnum.PartType.body] = "00";
-        this.bodyParts[CommonEnum.PartType.coat] = "00";
-        this.bodyParts[CommonEnum.PartType.hat] = "00";
-        this.bodyParts[CommonEnum.PartType.leg] = "00";
-        this.bodyParts[CommonEnum.PartType.shooes] = "00";
+        this.bodyParts[CommonEnum.PartType.body] = "000";
+        this.bodyParts[CommonEnum.PartType.coat] = "000";
+        this.bodyParts[CommonEnum.PartType.hat] = "000";
+        this.bodyParts[CommonEnum.PartType.leg] = "000";
+        this.bodyParts[CommonEnum.PartType.shooes] = "000";
     }
 
     void AddEventListener()
