@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
     {
         this.animationCom = this.GetComponent<Animation>();
         this.InitBodyParts();
-        this.LoadHeroModel("naked/hero");
+        this.LoadHeroModel("neinei/pants");
         cameraOffset = this.transform.position - Camera.main.transform.position;
         this.AddEventListener();
 
@@ -139,10 +139,10 @@ public class PlayerController : MonoBehaviour
         else if (state == PalyerState.Jump)
         {
             this.animationCom.Play("jump");
-            /*if (this.modelAnimator!=null)
+            if (this.modelAnimator!=null)
             {
             this.modelAnimator.Play("jump");
-            }*/
+            }
         }
     }
     #endregion

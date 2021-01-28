@@ -22,9 +22,9 @@ public class ItemController : MonoBehaviour
     //手电筒
     private GameObject torch;
 
-    private float startDistance = 10;
-    private float endDistance = 4;
-    private float backDistance = -1;
+    private float startDistance = GameConfig.startDistance;
+    private float endDistance = GameConfig.endDistance;
+    private float backDistance = GameConfig.backDistance;
 
     private bool dangerous = true;
     // Start is called before the first frame update

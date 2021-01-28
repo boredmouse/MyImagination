@@ -8,9 +8,9 @@ namespace WHGame
     {
         private GameObject torch;
 
-        private float startDistance = 10;
-        private float endDistance = 4;
-        private float backDistance = -1;
+        private float startDistance = GameConfig.startDistance;
+        private float endDistance = GameConfig.endDistance;
+        private float backDistance = GameConfig.backDistance;
         private SpriteRenderer spRenderer;
         private Color rightColor = Color.white;
 
