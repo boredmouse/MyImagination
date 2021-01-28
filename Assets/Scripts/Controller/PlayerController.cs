@@ -102,7 +102,7 @@ public class PlayerController : MonoBehaviour
         //跳跃
         if (Input.GetKeyDown(KeyCode.Space) && this.state != PalyerState.Jump)
         {
-            this.SetState(PalyerState.Jump, 0.6f);
+            this.SetState(PalyerState.Jump, 1f);
         }
         //下蹲
         if (Input.GetKeyDown(KeyCode.S) && (this.state == PalyerState.Walk || this.state == PalyerState.Idle))
