@@ -197,6 +197,8 @@ Animation:
   - {fileID: 7400000, guid: f8b3fc002727e8044bc1147fad2f5fb6, type: 2}
   - {fileID: 7400000, guid: 0dc1fe19fcc83e641ba1f03e8584c2da, type: 2}
   - {fileID: 7400000, guid: 9ee63306c82ea774b88a38974f176f9f, type: 2}
+  - {fileID: 7400000, guid: a1f850460edaf214da535f4bf504e323, type: 2}
+  - {fileID: 7400000, guid: 41dd9bc6281ba504b998be7af7296913, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -276,7 +278,7 @@ Transform:
   m_GameObject: {fileID: 4756647880579680767}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.147, y: -0.1473, z: 0}
-  m_LocalScale: {x: 1.3925083, y: 0.70536005, z: 1}
+  m_LocalScale: {x: 1.392508, y: 0.70536005, z: 1}
   m_Children: []
   m_Father: {fileID: 4622173838689458269}
   m_RootOrder: 2

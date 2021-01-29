@@ -10,17 +10,14 @@ namespace WHGame
         public static UIInfo Info = new UIInfo("Prefabs/UI/UIBattle", "UIBattle");
         public Text GetItemName;
         public Image ItemIcon;
-        public Text AchievementTipContent;
-
-
-        public Animation AchievementTipAnim;
+       
         public Animation GetItemTipAnim;
         
         public override void OnShow()
         {
             base.OnShow();
             BattleManager.OnGetClothEvent += this.OnGetCloth;
-            AchievementManager.OnGetAchievementEvent += this.OnGetAchievement;
+            StartCoroutine(FirstMeet());
         }
 
         void OnGetCloth(string id, CommonEnum.PartType part)
@@ -32,12 +29,13 @@ namespace WHGame
             GetItemTipAnim.Play("getItemTipIn");
         }
 
-        void OnGetAchievement(string id)
+         IEnumerator FirstMeet()
         {
-            var tableitem = AchievementConfig.GetConfigByID(id);
-            this.AchievementTipContent.text = tableitem.Desc;
-            this.AchievementTipAnim.Play("achievementIn");
+            yield return new WaitForSeconds(0.5f);
+            AchievementManager.GetAchievement("001");
         }
+
+        
 
         /*
         [SerializeField]

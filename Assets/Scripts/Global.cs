@@ -37,11 +37,15 @@ namespace WHGame
             GlobalCanvas.AddComponent<UIManager>();
             UIManager.Instance = GlobalCanvas.GetComponent<UIManager>();
             UIManager.Instance.Init();
+
+
         }
         void Update()
         {
 
         }
+
+       
     }
 
 }

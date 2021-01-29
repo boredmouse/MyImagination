@@ -13,7 +13,8 @@ public class PlayerController : MonoBehaviour
         Jump = 2,
         Down = 3,
         DownWalk = 4,
-        DownIdle = 5
+        DownIdle = 5,
+        Dress = 6
     };
     public float Speed = 0.1f;
     public Transform modelParent;
@@ -36,7 +37,6 @@ public class PlayerController : MonoBehaviour
         cameraOffset = this.transform.position - Camera.main.transform.position;
         this.AddEventListener();
 
-        AchievementManager.GetAchievement("001");
     }
 
     void InitBodyParts()
@@ -56,6 +56,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (this.state == PalyerState.Dress)
+        {
+            return;
+        }
         //前进
         if (Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A) && this.state != PalyerState.Idle)
         {
@@ -156,6 +160,17 @@ public class PlayerController : MonoBehaviour
                 this.SetStateAndAnim(PalyerState.DownIdle);
             }
         }
+        else if (state == PalyerState.Dress)
+        {
+            if (Input.GetKey(KeyCode.D))
+            {
+                this.SetStateAndAnim(PalyerState.Walk);
+            }
+            else
+            {
+                this.SetStateAndAnim(PalyerState.Idle);
+            }
+        }
     }
 
     void SetStateAndAnim(PalyerState state)
@@ -189,7 +204,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (state == PalyerState.Down)
         {
-            //this.animationCom.Play("down");
+            this.animationCom.Play("down");
             if (this.modelAnimator != null)
             {
                 this.modelAnimator.Play("down");
@@ -197,7 +212,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (state == PalyerState.DownWalk)
         {
-            //this.animationCom.Play("downwalk");
+            this.animationCom.Play("downwalk");
             if (this.modelAnimator != null)
             {
                 this.modelAnimator.Play("downwalk");
@@ -205,10 +220,18 @@ public class PlayerController : MonoBehaviour
         }
         else if (state == PalyerState.DownIdle)
         {
-            //this.animationCom.Play("downidle");
+            this.animationCom.Play("downidle");
             if (this.modelAnimator != null)
             {
                 this.modelAnimator.Play("downidle");
+            }
+        }
+         else if (state == PalyerState.Dress)
+        {
+            //this.animationCom.Play("dress");
+            if (this.modelAnimator != null)
+            {
+                this.modelAnimator.Play("dress");
             }
         }
     }
@@ -261,7 +284,7 @@ public class PlayerController : MonoBehaviour
         }
         this.LoadHeroModel(path);
         //todo 换装状态 暂时用idle代替
-        this.SetState(PalyerState.Idle);
+        this.SetState(PalyerState.Dress,1f);
     }
     #endregion
 }

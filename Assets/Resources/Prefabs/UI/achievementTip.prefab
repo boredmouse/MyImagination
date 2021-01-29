@@ -265,8 +265,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8746001075646884108}
   - component: {fileID: 7740745942651304980}
+  - component: {fileID: 7607072364491594197}
   m_Layer: 5
-  m_Name: achievementTip
+  m_Name: AchievementTip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -308,3 +309,17 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &7607072364491594197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5332670084392082755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9821d55593d6b8a4cb82289977ab18d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AchievementTipContent: {fileID: 1223786818201692685}
+  AchievementTipAnim: {fileID: 7740745942651304980}

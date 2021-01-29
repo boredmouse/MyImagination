@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace WHGame
 {
-    public class AchievementManager : MonoBehaviour
+    public class AchievementManager
     {
         public delegate void OnGetAchievement(string id);
         public static OnGetAchievement OnGetAchievementEvent;
-        
+
         public static List<string> GotList = new List<string>();
         public static void GetAchievement(string id)
         {
@@ -17,7 +17,10 @@ namespace WHGame
                 return;
             }
             GotList.Add(id);
-            OnGetAchievementEvent(id);
+            if (OnGetAchievementEvent != null)
+            {
+                OnGetAchievementEvent(id);
+            }
         }
     }
 }
