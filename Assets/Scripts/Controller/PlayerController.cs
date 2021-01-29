@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (this.state == PalyerState.Dress)
+        if (this.state == PalyerState.Dress || BattleManager.BattleStop)
         {
             return;
         }

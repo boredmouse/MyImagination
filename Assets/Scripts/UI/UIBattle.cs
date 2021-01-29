@@ -12,11 +12,16 @@ namespace WHGame
         public Image ItemIcon;
        
         public Animation GetItemTipAnim;
+
+        public GameObject LoseTipObj;
+        public Text LoseContent;
         
         public override void OnShow()
         {
             base.OnShow();
+            this.LoseTipObj.SetActive(false);
             BattleManager.OnGetClothEvent += this.OnGetCloth;
+            BattleManager.OnBattleLoseEvent += this.OnBattleLose;
             StartCoroutine(FirstMeet());
         }
 
@@ -27,6 +32,12 @@ namespace WHGame
             Sprite icon = Resources.Load<Sprite>(tableitem.Icon);
             ItemIcon.sprite = icon;
             GetItemTipAnim.Play("getItemTipIn");
+        }
+
+        void OnBattleLose(string loseTip)
+        {
+            this.LoseTipObj.SetActive(true);
+            this.LoseContent.text = loseTip;
         }
 
          IEnumerator FirstMeet()

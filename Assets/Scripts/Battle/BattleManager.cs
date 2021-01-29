@@ -12,6 +12,10 @@ namespace WHGame
         public delegate void OnGetCloth(string id, CommonEnum.PartType part);
         public static OnGetCloth OnGetClothEvent;
 
+        public delegate void OnBattleLose(string loseTip);
+        public static OnBattleLose OnBattleLoseEvent;
+        public static bool BattleStop = false;
+
         public static void Init()
         {
             MySceneManager.OnSceneLoadedEvent += BattleManager._OnSceneLoaded;
@@ -33,8 +37,17 @@ namespace WHGame
 
         public static void StartBattle()
         {
+            BattleStop = false;
             battleControl = new SingleBattleController();
             battleControl.BattleStart(curConfig);
+        }
+
+        public static void BattleLose(string loseTip)
+        {
+            Debug.Log("GameLose");
+            BattleStop = true;
+            OnBattleLoseEvent(loseTip);
+
         }
     }
 
