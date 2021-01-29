@@ -8,13 +8,24 @@ namespace WHGame
     {
         private static BattleT curConfig = BattleConfig.Configs[0];
         private static SingleBattleController battleControl;
+        public static bool BattleStop = false;
 
+        public static GameObject PatObj;
+
+
+
+        #region 战斗事件
         public delegate void OnGetCloth(string id, CommonEnum.PartType part);
         public static OnGetCloth OnGetClothEvent;
 
         public delegate void OnBattleLose(string loseTip);
         public static OnBattleLose OnBattleLoseEvent;
-        public static bool BattleStop = false;
+
+        public delegate void OnCreatePat(string id);
+        public static OnCreatePat OnCreatePatEvent;
+        #endregion
+
+
 
         public static void Init()
         {
@@ -48,6 +59,22 @@ namespace WHGame
             BattleStop = true;
             OnBattleLoseEvent(loseTip);
 
+        }
+
+        public static void CreatePat(string id)
+        {
+            OnCreatePatEvent(id);
+            //todo 生成宠物
+            if (PatObj != null)
+            {
+                Destroy(PatObj, 0);
+            }
+            var tableitem = PatConfig.GetConfigByID(id);
+            string finalPath = tableitem.Path;
+            var prefab = Resources.Load(finalPath, typeof(GameObject)) as GameObject;
+            GameObject go = Object.Instantiate(prefab,new Vector3(GameConfig.PatBornX,0,0),Quaternion.identity) as GameObject;
+            
+            PatObj = go;
         }
     }
 

@@ -17,6 +17,8 @@ namespace WHGame
         public const float distanceZoom = 0.6f;
         //跳跃距离
         public const float jumpDistance = 2f;
+
+        public const float PatBornX = -2f;
     }
 }
 
