@@ -21,6 +21,9 @@ namespace WHGame
         public delegate void OnBattleLose(string loseTip);
         public static OnBattleLose OnBattleLoseEvent;
 
+        public delegate void OnBattleWin(string winTip);
+        public static OnBattleWin OnBattleWinEvent;
+
         public delegate void OnCreatePat(string id);
         public static OnCreatePat OnCreatePatEvent;
         #endregion
@@ -59,6 +62,14 @@ namespace WHGame
             BattleStop = true;
             OnBattleLoseEvent(loseTip);
             AudioManager.Instance.PlayAudioClip(AudioManager.ClipName.Lose);
+        }
+
+        public static void BattleWin(string winTip)
+        {
+            Debug.Log("GameWin");
+            BattleStop = true;
+            OnBattleWinEvent(winTip);
+            AudioManager.Instance.PlayAudioClip(AudioManager.ClipName.Win);
         }
 
         public static void CreatePat(string id)

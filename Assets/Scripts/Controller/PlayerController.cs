@@ -53,6 +53,11 @@ public class PlayerController : MonoBehaviour
         BattleManager.OnGetClothEvent += this.OnGetCloth;
     }
 
+    void OnDestroy()
+    {
+        BattleManager.OnGetClothEvent -= this.OnGetCloth;
+    }
+
     // Update is called once per frame
     void Update()
     {

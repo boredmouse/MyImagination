@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace WHGame
 {
-    public class BattleLoseComponent : MonoBehaviour
+    public class WinComponent : MonoBehaviour
     {
-        public string DieType = "吐死";
+        public string WinType = "回家喽！";
         // Start is called before the first frame update
         void Start()
         {
@@ -21,10 +21,10 @@ namespace WHGame
 
         void OnCollisionEnter2D(Collision2D col)
         {
+            Debug.Log("coll GameWin");
             if (col.gameObject.CompareTag("player"))
             {
-                BattleManager.BattleLose(this.DieType);
-
+                BattleManager.BattleWin(this.WinType);
             }
         }
     }

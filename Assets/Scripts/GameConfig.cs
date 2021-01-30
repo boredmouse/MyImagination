@@ -7,7 +7,7 @@ namespace WHGame
     public class GameConfig
     {
         //开始变透明距离
-        public const float startDistance = 10;
+        public const float startDistance = 8;
         //完全透明距离
         public const float endDistance = 4;
         //安全距离

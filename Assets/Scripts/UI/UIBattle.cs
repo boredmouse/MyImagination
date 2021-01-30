@@ -15,6 +15,17 @@ namespace WHGame
 
         public GameObject LoseTipObj;
         public Text LoseContent;
+
+        public GameObject WinTipObj;
+        public Text WinContent;
+
+        public Button BackBtn;
+
+        void Start() 
+        {
+            BackBtn.onClick.AddListener(this.OnClickBack);
+            this.BackBtn.gameObject.SetActive(false);
+        }
         
         public override void OnShow()
         {
@@ -22,6 +33,7 @@ namespace WHGame
             this.LoseTipObj.SetActive(false);
             BattleManager.OnGetClothEvent += this.OnGetCloth;
             BattleManager.OnBattleLoseEvent += this.OnBattleLose;
+            BattleManager.OnBattleWinEvent += this.OnBattleWin;
             StartCoroutine(FirstMeet());
         }
 
@@ -30,6 +42,7 @@ namespace WHGame
             base.OnHide();
             BattleManager.OnGetClothEvent -= this.OnGetCloth;
             BattleManager.OnBattleLoseEvent -= this.OnBattleLose;
+            BattleManager.OnBattleWinEvent -= this.OnBattleWin;
             
         }
 
@@ -46,6 +59,14 @@ namespace WHGame
         {
             this.LoseTipObj.SetActive(true);
             this.LoseContent.text = loseTip;
+            this.BackBtn.gameObject.SetActive(true);
+        }
+
+         void OnBattleWin(string winTip)
+        {
+            this.WinTipObj.SetActive(true);
+            this.WinContent.text = winTip;
+            this.BackBtn.gameObject.SetActive(true);
         }
 
          IEnumerator FirstMeet()
@@ -54,7 +75,11 @@ namespace WHGame
             AchievementManager.GetAchievement("001");
         }
 
-        
+        void OnClickBack()
+        {
+            MySceneManager.EnterScene(SceneName.Home);
+            AudioManager.Instance.PlayAudioClip(AudioManager.ClipName.ClickBtn);
+        }
 
         /*
         [SerializeField]

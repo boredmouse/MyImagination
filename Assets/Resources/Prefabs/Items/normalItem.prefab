@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1331001901817607278}
   - component: {fileID: 1331001901817607264}
   - component: {fileID: 1331001901817607265}
+  - component: {fileID: 5128325459614107299}
   m_Layer: 0
   m_Name: New Sprite
   m_TagString: Untagged
@@ -140,6 +141,19 @@ PolygonCollider2D:
       - {x: 0.45999998, y: -0.56}
       - {x: 0.5, y: -0.47}
       - {x: 0.52, y: -0.39999998}
+--- !u!114 &5128325459614107299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331001901817607276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24ca5cc12dfc75b48a2a4c793b52edd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DieType: "\u5410\u6B7B!"
 --- !u!1 &1331001902686530806
 GameObject:
   m_ObjectHideFlags: 0

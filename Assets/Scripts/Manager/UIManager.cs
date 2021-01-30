@@ -103,7 +103,7 @@ namespace WHGame
         public void HideAllAndShow(UIInfo uiInfo)
         {
             int curUICount = this.activeUIStack.Count;
-            for (int i = 1; i <= curUICount; i++)
+            /*for (int i = 1; i <= curUICount; i++)
             {
                 UIBase curUI = this.activeUIStack.Peek();
                 if (curUI.UiInfo != null)
@@ -112,6 +112,17 @@ namespace WHGame
                     curUI.gameObject.SetActive(false);
                     curUI.OnHide();
                     this._AddToDeactiveList(curUI);
+                }
+            }*/
+            for (int i = 1; i <= curUICount; i++)
+            {
+                UIBase curUI = this.activeUIStack.Peek();
+                if (curUI.UiInfo != null)
+                {
+                    curUI = this.activeUIStack.Pop();
+                    curUI.gameObject.SetActive(false);
+                    curUI.OnHide();
+                    Destroy(curUI.gameObject);
                 }
             }
             this.ShowUIWithStack(uiInfo);
