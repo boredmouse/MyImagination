@@ -59,6 +59,7 @@ public class ItemController : MonoBehaviour
                 {
                     //派发获取衣物事件
                     BattleManager.OnGetClothEvent(this.ID,this.part);
+                    AudioManager.Instance.PlayAudioClip(AudioManager.ClipName.GetItem);
                 }
             }
             if (!left.activeSelf)

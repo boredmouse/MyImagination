@@ -20,8 +20,8 @@ namespace WHGame
 
         public void OnClickStart()
         {
-            Debug.Log("click start");
             MySceneManager.EnterScene(SceneName.Home);
+            AudioManager.Instance.PlayAudioClip(AudioManager.ClipName.ClickStart);
         }
 
         public void OnClickHelp()

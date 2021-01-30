@@ -34,6 +34,7 @@ namespace WHGame
         void OnClickJoin()
         {
             MySceneManager.EnterScene(SceneName.Battle);
+            AudioManager.Instance.PlayAudioClip(AudioManager.ClipName.ClickBtn);
         }
 
     }

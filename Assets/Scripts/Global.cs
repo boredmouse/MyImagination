@@ -38,6 +38,13 @@ namespace WHGame
             UIManager.Instance = GlobalCanvas.GetComponent<UIManager>();
             UIManager.Instance.Init();
 
+            //全局音乐播放器
+            var prefab2 = Resources.Load("Prefabs/AudioPlayer", typeof(GameObject)) as GameObject;
+            GameObject audioplayer = Object.Instantiate(prefab2) as GameObject;
+            audioplayer.name = "AudioPlayer";
+            DontDestroyOnLoad(audioplayer);
+            AudioManager.Instance = audioplayer.GetComponent<AudioManager>();
+
 
         }
         void Update()

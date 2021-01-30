@@ -17,6 +17,8 @@ namespace WHGame
                 return;
             }
             GotList.Add(id);
+            AudioManager.Instance.PlayAudioClip(AudioManager.ClipName.Achievement);
+        
             if (OnGetAchievementEvent != null)
             {
                 OnGetAchievementEvent(id);

@@ -58,7 +58,7 @@ namespace WHGame
             Debug.Log("GameLose");
             BattleStop = true;
             OnBattleLoseEvent(loseTip);
-
+            AudioManager.Instance.PlayAudioClip(AudioManager.ClipName.Lose);
         }
 
         public static void CreatePat(string id)
