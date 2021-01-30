@@ -11,7 +11,7 @@ namespace WHGame
            "001","桃心内裤","Textures/Items/neinei"
        ),
        new ItemT(
-           "002","吐死","a"
+           "002","背心","Textures/Items/neinei"
        )
         };
         public static ItemT GetConfigByID(string id)

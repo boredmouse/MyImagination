@@ -12,6 +12,9 @@ namespace WHGame
        ),
        new ModelResourceT(
            "000000000001000","neinei/pants"
+       ),
+       new ModelResourceT(
+           "002000000001000","beixin/beixinm"
        )
    };
         public static ModelResourceT GetConfigByID(string id)

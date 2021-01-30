@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 5328961249234459452}
   - component: {fileID: 6799203019350959109}
   m_Layer: 0
-  m_Name: beixindown
+  m_Name: beixinm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
