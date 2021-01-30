@@ -21,10 +21,25 @@ namespace WHGame
 
         public Button BackBtn;
 
+        public Text TimeText;
+
+        private float time=0;
+
         void Start() 
         {
             BackBtn.onClick.AddListener(this.OnClickBack);
             this.BackBtn.gameObject.SetActive(false);
+        }
+
+        void Update()
+        {
+            if (BattleManager.BattleStop)
+            {
+                return;
+            }
+            this.time += Time.deltaTime;
+            
+            this.TimeText.text = this.time.ToString("F2")+"s";
         }
         
         public override void OnShow()
@@ -35,6 +50,8 @@ namespace WHGame
             BattleManager.OnBattleLoseEvent += this.OnBattleLose;
             BattleManager.OnBattleWinEvent += this.OnBattleWin;
             StartCoroutine(FirstMeet());
+            TimeText.gameObject.SetActive(true);
+            time = 0;
         }
 
         public override void OnHide()
@@ -80,26 +97,6 @@ namespace WHGame
             MySceneManager.EnterScene(SceneName.Home);
             AudioManager.Instance.PlayAudioClip(AudioManager.ClipName.ClickBtn);
         }
-
-        /*
-        [SerializeField]
-        private Button closeButton;
-        public Button WalkBtn;
-        // Start is called before the first frame update
-        void Start()
-        {
-            closeButton.onClick.AddListener(OnClickClose);
-            WalkBtn.onClick.AddListener(OnClickWalk);
-        }
-        public void OnClickClose()
-        {
-            MySceneManager.EnterScene(SceneName.Start);
-        }
-        public void OnClickWalk()
-        {
-            OnPlayAnimEvent(AnimID.Walking,ClipMode.Loop,0.3f);
-        }
-        */
     }
 
 }

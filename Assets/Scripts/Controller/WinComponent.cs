@@ -21,11 +21,16 @@ namespace WHGame
 
         void OnCollisionEnter2D(Collision2D col)
         {
-            Debug.Log("coll GameWin");
             if (col.gameObject.CompareTag("player"))
             {
-                BattleManager.BattleWin(this.WinType);
+                BattleManager.BattleStop = true;
+                StartCoroutine(win());
             }
+        }
+
+        IEnumerator win() {
+            yield return new WaitForSeconds(2f);
+             BattleManager.BattleWin(this.WinType);
         }
     }
 }
