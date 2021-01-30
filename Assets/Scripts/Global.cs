@@ -8,7 +8,7 @@ namespace WHGame
     public class Global : MonoBehaviour
     {
         public static Global Instance;
-        public static bool IsTestScene = true;
+        public static bool IsTestScene = false;
 
 
         [RuntimeInitializeOnLoadMethod]

@@ -9,21 +9,22 @@ namespace WHGame
     {
         public static UIInfo Info = new UIInfo("Prefabs/UI/UIStartGame", "UIStartGame");
         public Button startButton;
-        public Button closeButton;
+        public Button helpButton;
 
         // Start is called before the first frame update
         void Start()
         {
-            startButton.onClick.AddListener(OnClickStart);
-            closeButton.onClick.AddListener(OnClickClose);
+            startButton.onClick.AddListener(this.OnClickStart);
+            helpButton.onClick.AddListener(this.OnClickHelp);
         }
 
         public void OnClickStart()
         {
+            Debug.Log("click start");
             MySceneManager.EnterScene(SceneName.Home);
         }
 
-        public void OnClickClose()
+        public void OnClickHelp()
         {
             //UIManager.Instance.HideUIFromStack(UIStartGame.Info);
         }

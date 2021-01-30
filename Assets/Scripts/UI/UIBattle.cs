@@ -25,6 +25,14 @@ namespace WHGame
             StartCoroutine(FirstMeet());
         }
 
+        public override void OnHide()
+        {
+            base.OnHide();
+            BattleManager.OnGetClothEvent -= this.OnGetCloth;
+            BattleManager.OnBattleLoseEvent -= this.OnBattleLose;
+            
+        }
+
         void OnGetCloth(string id, CommonEnum.PartType part)
         {
             var tableitem = ItemConfig.GetConfigByID(id);
