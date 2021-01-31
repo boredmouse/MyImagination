@@ -13,19 +13,19 @@ namespace WHGame
         private float backDistance = GameConfig.backDistance;
 
         private bool lookRight = false;
-        private Animation anim;
+        private Animator anim;
 
         // Start is called before the first frame update
         void Start()
         {
             this.torch = GameObject.FindGameObjectWithTag("torchPos");
-            anim = this.gameObject.GetComponent<Animation>();
+            anim = this.gameObject.GetComponent<Animator>();
         }
 
         // Update is called once per frame
         void Update()
         {
-            if (this.transform.position.x - this.torch.transform.position.x > backDistance-1)
+            if (this.transform.position.x - this.torch.transform.position.x > backDistance-3)
             {
                 if (lookRight)
                 {
@@ -33,7 +33,7 @@ namespace WHGame
                     this.lookRight = false;
                 }
             }
-            else if (this.transform.position.x - this.torch.transform.position.x < backDistance-1)
+            else if (this.transform.position.x - this.torch.transform.position.x < backDistance-3)
             {
                 if (!this.lookRight)
                 {
