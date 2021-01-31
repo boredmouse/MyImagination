@@ -38,6 +38,7 @@ namespace WHGame
                 return;
             }
             this.time += Time.deltaTime;
+            BattleManager.BattleTime = this.time;
             
             this.TimeText.text = this.time.ToString("F2")+"s";
         }

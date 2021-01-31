@@ -12,6 +12,8 @@ namespace WHGame
 
         public static GameObject PatObj;
 
+        public static float BattleTime = 0f;
+
 
 
         #region 战斗事件
@@ -52,6 +54,7 @@ namespace WHGame
         public static void StartBattle()
         {
             BattleStop = false;
+            BattleTime = 0;
             battleControl = new SingleBattleController();
             battleControl.BattleStart(curConfig);
         }
@@ -70,6 +73,11 @@ namespace WHGame
             BattleStop = true;
             OnBattleWinEvent(winTip);
             AudioManager.Instance.PlayAudioClip(AudioManager.ClipName.Win);
+            if(BattleTime< 28f)
+            {
+                AchievementManager.GetAchievement("004");
+
+            }
         }
 
         public static void CreatePat(string id)

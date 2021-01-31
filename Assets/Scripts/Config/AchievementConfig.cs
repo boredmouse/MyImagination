@@ -15,6 +15,9 @@ namespace WHGame
        ),
        new AchievementT(
            "003","像个人样"
+       ),
+       new AchievementT(
+           "004","被雅典娜称赞快男"
        )
         };
         public static AchievementT GetConfigByID(string id)
