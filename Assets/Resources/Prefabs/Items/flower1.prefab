@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24ca5cc12dfc75b48a2a4c793b52edd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DieType: "\u5410\u6B7B!"
+  DieType: "\u4E0D\u8981\u8E29\u82B1\u82B1~"
 --- !u!60 &7242258937548441582
 PolygonCollider2D:
   m_ObjectHideFlags: 0

@@ -36,6 +36,8 @@ namespace WHGame
             }
             else if (backDistance <= this.transform.position.x - this.torch.transform.position.x && this.transform.position.x - this.torch.transform.position.x <= endDistance)
             {
+                rightColor.a = 0;
+                this.spRenderer.color = rightColor;
             }
             else if (this.transform.position.x - this.torch.transform.position.x < backDistance)
             {

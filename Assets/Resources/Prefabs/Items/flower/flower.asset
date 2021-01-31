@@ -15,9 +15,8 @@ MonoBehaviour:
   asepriteAsset: {fileID: 102900000, guid: b599f51108222374499ef638de0f674d, type: 3}
   targetTexture: {fileID: 2800000, guid: 6f395a3315368034996cff03fbe7284f, type: 3}
   targetAtlas: {fileID: 4900000, guid: 2bb82a0b041119645a75f5018826e358, type: 3}
-  targetAnimator: {fileID: 91105077868889010}
-  targetPrefab: {fileID: 1986924627560779213, guid: 5a83f6331e84b2048a1939ca922d9f46,
-    type: 3}
+  targetAnimator: {fileID: 91957724608062760}
+  targetPrefab: {fileID: 0}
   useTags: 1
   loopAnim: 1
   useConfig: 1
@@ -27,9 +26,9 @@ MonoBehaviour:
   pivot: {x: 0.5, y: 0.5}
   animType: 0
   clips:
-  - {fileID: 74437323833881410}
-  lastExportString: 2021/1/31 7:49:10
---- !u!74 &74437323833881410
+  - {fileID: 74491925726171056}
+  lastExportString: 2021/1/31 8:07:25
+--- !u!74 &74491925726171056
 AnimationClip:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,7 +124,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events: []
---- !u!91 &91105077868889010
+--- !u!91 &91957724608062760
 AnimatorController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,4 +145,4 @@ AnimatorController:
     m_DefaultWeight: 0
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
-    m_Controller: {fileID: 91105077868889010}
+    m_Controller: {fileID: 91957724608062760}
