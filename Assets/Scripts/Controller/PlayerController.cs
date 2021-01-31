@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     private Animator modelAnimator;
     private Vector3 cameraOffset;
 
-
+    private bool IsNaked = true;
     private PalyerState state = PalyerState.Idle;
 
     private Dictionary<CommonEnum.PartType, string> bodyParts = new Dictionary<CommonEnum.PartType, string>(5);
@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
     {
         this.animationCom = this.GetComponent<Animation>();
         this.InitBodyParts();
-        this.LoadHeroModel("neinei/pants");
+        this.LoadHeroModel("naked/hero");
         cameraOffset = this.transform.position - Camera.main.transform.position;
         this.AddEventListener();
 
@@ -109,12 +109,12 @@ public class PlayerController : MonoBehaviour
             this.SetState(PalyerState.Idle);
         }
         //跳跃
-        if (Input.GetKeyDown(KeyCode.Space) && this.state != PalyerState.Jump)
+        if (Input.GetKeyDown(KeyCode.Space) && this.state != PalyerState.Jump &&!this.IsNaked)
         {
             this.SetState(PalyerState.Jump, 1f);
         }
         //下蹲
-        if (Input.GetKeyDown(KeyCode.S) && (this.state == PalyerState.Walk || this.state == PalyerState.Idle))
+        if (Input.GetKeyDown(KeyCode.S) && (this.state == PalyerState.Walk || this.state == PalyerState.Idle)&&!this.IsNaked)
         {
             this.SetState(PalyerState.Down, 0.5f);
         }
@@ -250,6 +250,10 @@ public class PlayerController : MonoBehaviour
         if(this.bodyParts[CommonEnum.PartType.body]!="000")
         {
             AchievementManager.GetAchievement("003");
+        }
+        if(this.bodyParts[CommonEnum.PartType.leg]!="000")
+        {
+            this.IsNaked = false;
         }
         string path = this.GetModelPathByBodyParts();
         StartCoroutine(WaitForChangeCloth(path));
