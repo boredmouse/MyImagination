@@ -247,6 +247,10 @@ public class PlayerController : MonoBehaviour
     void OnGetCloth(string id, CommonEnum.PartType part)
     {
         this.bodyParts[part] = id;
+        if(this.bodyParts[CommonEnum.PartType.body]!="000")
+        {
+            AchievementManager.GetAchievement("003");
+        }
         string path = this.GetModelPathByBodyParts();
         StartCoroutine(WaitForChangeCloth(path));
     }
@@ -283,7 +287,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator WaitForChangeCloth(string path)
     {
-        while (this.state != PalyerState.Idle && this.state != PalyerState.Walk)
+        while (this.state == PalyerState.Jump)
         {
             yield return new WaitForSeconds(0.1f);
         }

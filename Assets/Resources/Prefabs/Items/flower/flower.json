@@ -1,0 +1,91 @@
+{ "frames": {
+   "000_idle": {
+    "frame": { "x": 0, "y": 0, "w": 300, "h": 300 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 300, "h": 300 },
+    "sourceSize": { "w": 300, "h": 300 },
+    "duration": 100
+   },
+   "001_idle": {
+    "frame": { "x": 300, "y": 0, "w": 300, "h": 300 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 300, "h": 300 },
+    "sourceSize": { "w": 300, "h": 300 },
+    "duration": 100
+   },
+   "002_idle": {
+    "frame": { "x": 600, "y": 0, "w": 300, "h": 300 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 300, "h": 300 },
+    "sourceSize": { "w": 300, "h": 300 },
+    "duration": 100
+   },
+   "003_idle": {
+    "frame": { "x": 900, "y": 0, "w": 300, "h": 300 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 300, "h": 300 },
+    "sourceSize": { "w": 300, "h": 300 },
+    "duration": 100
+   },
+   "004_idle": {
+    "frame": { "x": 1200, "y": 0, "w": 300, "h": 300 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 300, "h": 300 },
+    "sourceSize": { "w": 300, "h": 300 },
+    "duration": 100
+   },
+   "005_idle": {
+    "frame": { "x": 1500, "y": 0, "w": 300, "h": 300 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 300, "h": 300 },
+    "sourceSize": { "w": 300, "h": 300 },
+    "duration": 100
+   },
+   "006_idle": {
+    "frame": { "x": 0, "y": 300, "w": 300, "h": 300 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 300, "h": 300 },
+    "sourceSize": { "w": 300, "h": 300 },
+    "duration": 100
+   },
+   "007_idle": {
+    "frame": { "x": 300, "y": 300, "w": 300, "h": 300 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 300, "h": 300 },
+    "sourceSize": { "w": 300, "h": 300 },
+    "duration": 100
+   },
+   "008_idle": {
+    "frame": { "x": 600, "y": 300, "w": 300, "h": 300 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 300, "h": 300 },
+    "sourceSize": { "w": 300, "h": 300 },
+    "duration": 100
+   },
+   "009_idle": {
+    "frame": { "x": 900, "y": 300, "w": 300, "h": 300 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 300, "h": 300 },
+    "sourceSize": { "w": 300, "h": 300 },
+    "duration": 100
+   }
+ },
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.1.12",
+  "image": "Assets\\Resources\\Prefabs\\Items\\flower/flower.png",
+  "format": "RGBA8888",
+  "size": { "w": 2048, "h": 1024 },
+  "scale": "1"
+ }
+}

@@ -12,6 +12,9 @@ namespace WHGame
        ),
        new AchievementT(
            "002","吐死"
+       ),
+       new AchievementT(
+           "003","像个人样"
        )
         };
         public static AchievementT GetConfigByID(string id)
